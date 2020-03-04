@@ -1,0 +1,44 @@
+<h1 class="mt-4">Dashboard</h1>
+
+<p>Welcome <%= user == 'undefined' ? user.name : '' %></p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+<form method="POST" action="/dashboard">
+    <div class="form-group">
+      <label for="eventTitle">Event Title</label>
+      <input name="title" type="text" id="eventTitle" class="form-control" placeholder="Event Title">
+    </div>
+    <div class="form-group">
+      <label for="eventLocation">Location</label>
+      <input name="location" type="text" class="form-control" id="eventLocation" placeholder="Location">
+    </div>
+
+    <div class="form-group">
+      <label for="eventDate">Date</label>
+      <input name="date" type="date" class="form-control" id="eventDate">
+    </div>
+
+
+    <div class="form-group">
+        <label for="eventSponser">Sponsered By</label>
+        <input name="sponser" type="text" class="form-control" id="eventSponser" placeholder="Sponserer">
+    </div>
+    
+    <div class="form-group form-check">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+<% fre.map(function(res){ %>
+
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= 'Title : ' + res.Title %></h5>
+    <p class="card-text"><%= 'Date : ' + res.eventDate %> </p>
+    <h5><%= 'Sponsered By : ' + res.SponseredBy %></h5>
+  </div>
+</div>
+<% }) %> 
